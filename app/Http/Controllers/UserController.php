@@ -5,24 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Resources\UserResource;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     public function __construct(
-        protected UserResource $userResource
     ) {
         $this->middleware('auth:api');
-    }
-
-    public function collection(array|object $resources): JsonResource
-    {
-        return $this->userResource->collection($resources);
-    }
-
-    public function resource(array|object $resource): JsonResource
-    {
-        return $this->userResource->make($resource);
     }
 
     function register(Request $request)

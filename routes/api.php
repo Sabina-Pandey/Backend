@@ -27,4 +27,6 @@ Route::post('login', [UserController::class, 'login']);
 Route::apiResource("users", UserController::class);
 Route::apiResource("users", ProductsController::class);
 Route::get('search', [SearchController::class, 'search']);
-    
+Route::get("home", function () {
+    return "sabine";
+});

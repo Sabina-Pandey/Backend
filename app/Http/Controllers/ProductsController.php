@@ -9,19 +9,9 @@ use App\Http\Resources\ProductResource;
 class ProductsController extends Controller
 {
     public function __construct(
-        protected ProductResource $productResource
+
     ){
 
-    }
-
-    public function collection(array|object $resources): JsonResource
-    {
-        return $this->productResource->collection($resources);
-    }
-
-    public function resource(array|object $resource): JsonResource
-    {
-        return $this->productResource->make($resource);
     }
 
     public function index()

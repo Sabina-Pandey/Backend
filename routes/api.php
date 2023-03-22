@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\SearchController;
 
 
 /*
@@ -25,4 +26,5 @@ Route::post('register', [UserController::class, 'register']);
 Route::post('login', [UserController::class, 'login']);
 Route::apiResource("users", UserController::class);
 Route::apiResource("users", ProductsController::class);
+Route::get('search', [SearchController::class, 'search']);
     
